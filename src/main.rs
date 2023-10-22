@@ -55,6 +55,7 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
         }
 
         let mut target = display.draw();
+        target.clear_color(0., 0., 0., 1.);
         target.draw((&shape, &normals), &indices, &shader,
             &glium::uniform! { cam: cam, light: [-1., 0., 0.] as [f32; 3], time: start_time.elapsed().as_secs_f32() },
             &Default::default()).unwrap();
